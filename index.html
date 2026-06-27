@@ -74,6 +74,15 @@
   @media(max-width:900px){.subtitle{margin-left:auto;margin-right:auto;}}
   .cta-row{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards;}
   @media(max-width:900px){.cta-row{justify-content:center;}}
+  .resume-links{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:16px;
+    opacity:0;
+    animation:fadeUp .8s 1s forwards;
+  }
+  @media(max-width:900px){.resume-links{justify-content:center;}}
   .btn{
     padding:14px 28px;border-radius:8px;font-weight:700;font-size:0.92rem;cursor:pointer;
     border:none;transition:.3s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
@@ -301,8 +310,8 @@
       <div class="cta-row">
         <a href="#projects" class="btn btn-primary">View My Work →</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
-        <a href="#" id="resumeBtn" class="btn btn-resume" download>⬇ Download Resume</a>
       </div>
+      <div class="resume-links" id="resumeLinks"></div>
     </div>
     <div class="photo-wrap">
       <div class="photo-ring">
@@ -552,7 +561,12 @@
 <script>
 /* ====== CONFIG: paste your hosted photo & resume URLs here ====== */
 const PROFILE_PHOTO_URL = "https://raw.githubusercontent.com/faheem1309/Assests/main/fam.jpg"; // e.g. "https://yourhost.com/faheem.jpg"
-const RESUME_FILE_URL = "";   // e.g. Google Drive direct link or GitHub raw PDF link
+const RESUME_FILES = [
+  {label:"ATS Resume", file:"Faheem_Ahmed_ATS_Resume.pdf"},
+  {label:"Teacher Resume", file:"Faheem_Ahmed_CS_Teacher_ATS_Resume.pdf"},
+  {label:"Main Resume", file:"Faheem_Resume.pdf"},
+  {label:"Tailored Resume", file:"Tailored_REs_to_JD_Full_Stack_or_Backend.pdf"},
+];
 
 if(PROFILE_PHOTO_URL){
   const img=document.getElementById('profilePhoto');
@@ -560,15 +574,10 @@ if(PROFILE_PHOTO_URL){
   img.style.display='block';
   document.getElementById('photoFallback').style.display='none';
 }
-const resumeBtn=document.getElementById('resumeBtn');
-if(RESUME_FILE_URL){
-  resumeBtn.href=RESUME_FILE_URL;
-}else{
-  resumeBtn.addEventListener('click',(e)=>{
-    e.preventDefault();
-    alert('Add your resume file URL in RESUME_FILE_URL inside the script to activate this button.');
-  });
-}
+const resumeLinks=document.getElementById('resumeLinks');
+resumeLinks.innerHTML = RESUME_FILES.map(({label, file}) => `
+  <a href="./${file}" class="btn btn-resume" download="${file}">⬇ ${label}</a>
+`).join('');
 
 // ---------- Scroll progress ----------
 window.addEventListener('scroll',()=>{
