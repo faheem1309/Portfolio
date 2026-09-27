@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Faheem Ahmed — Portfolio</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,__KSHAMIYA_FAVICON_B64__">
 <style>
   :root{
     --navy:#16263F;
     --sky:#4DA8DA;
+    --gold:#D4A54A;
     --charcoal:#2E2E2E;
     --gray:#F2F4F7;
     --text-main:#FFFFFF;
@@ -33,7 +35,8 @@
     padding:16px 6%;background:rgba(22,38,63,0.9);backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(77,168,218,0.15);
   }
-  nav .logo{font-weight:800;color:var(--sky);font-size:1.1rem;letter-spacing:0.5px;cursor:pointer;}
+  nav .logo{font-weight:800;color:var(--sky);font-size:1.1rem;letter-spacing:0.5px;cursor:pointer;display:flex;align-items:center;gap:10px;}
+  nav .logo img{height:26px;width:26px;border-radius:6px;object-fit:cover;}
   nav ul{display:flex;gap:28px;list-style:none;}
   nav ul li a{color:var(--text-main);text-decoration:none;font-size:0.9rem;font-weight:500;opacity:0.9;position:relative;transition:.3s;}
   nav ul li a:hover{opacity:1;color:var(--sky);}
@@ -143,6 +146,14 @@
     border-left:3px solid var(--sky);padding:14px 20px;margin:26px 0;background:rgba(77,168,218,0.09);
     border-radius:0 8px 8px 0;font-style:italic;color:var(--text-main);font-weight:500;
   }
+  .brand-badge{
+    display:inline-flex;align-items:center;gap:12px;background:rgba(212,165,74,0.1);
+    border:1px solid rgba(212,165,74,0.35);border-radius:14px;padding:12px 18px;margin:18px 0;
+  }
+  .brand-badge img{height:44px;width:44px;border-radius:8px;object-fit:cover;flex-shrink:0;}
+  .brand-badge-text{line-height:1.35;}
+  .brand-badge-text .bb-name{color:var(--text-main);font-weight:800;font-size:0.98rem;}
+  .brand-badge-text .bb-tag{color:var(--gold);font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;}
   .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
   .stat-card{
     background:rgba(255,255,255,0.05);border:1px solid rgba(77,168,218,0.22);border-radius:14px;
@@ -306,7 +317,7 @@
     <div class="hero-inner">
       <div class="tag">Full-Stack Engineer · Cloud & AI Architect · Digital Educator</div>
       <h1 class="title">Hi, I'm Faheem Ahmed.<br>I build <span>accessible technology</span><br>that empowers people.</h1>
-      <p class="subtitle">Founder & CEO of Skillverse Technologies — an inclusive EdTech ecosystem. I design and ship full-stack web applications, AI-powered tools, and digital learning experiences, driven by the belief that technology is the universal equalizer. Incoming B.E. (ISE) scholar at JSSSTU (SJCE), Mysuru.</p>
+      <p class="subtitle">Founder & CEO of Kshamiya Technologies — an inclusive EdTech ecosystem built on "Capability as an Essence." I design and ship full-stack web applications, AI-powered tools, and digital learning experiences, driven by the belief that technology is the universal equalizer. Pursuing B.E. (ISE) at JSSSTU (SJCE), Mysuru.</p>
       <div class="cta-row">
         <a href="#projects" class="btn btn-primary">View My Work →</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -336,9 +347,13 @@
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I graduated with my <strong>Diploma in Computer Science & Engineering</strong> from JSS Polytechnic for the Differently Abled, Mysuru (June 2026, 9.0 CGPA), cleared <strong>DCET 2026</strong> (Karnataka Rank 1690, 90%), and have been admitted via <strong>Lateral Entry into B.E. in Information Science & Engineering</strong> at JSSSTU (SJCE), Mysuru. Alongside my studies, I'm the <strong>Founder & CEO of Skillverse Technologies</strong> — an EdTech platform built to make education affordable, accessible, and inclusive, especially for underserved and differently-abled learners.</p>
+      <p>I graduated with my <strong>Diploma in Computer Science & Engineering</strong> from JSS Polytechnic for the Differently Abled, Mysuru (June 2026, 9.0 CGPA), cleared <strong>DCET 2026</strong> (Karnataka Rank 1690, 90%), and have been admitted via <strong>Lateral Entry into B.E. in Information Science & Engineering</strong> at JSSSTU (SJCE), Mysuru. Alongside my studies, I'm the <strong>Founder & CEO of Kshamiya Technologies</strong> — an EdTech platform built to make education affordable, accessible, and inclusive, especially for underserved and differently-abled learners.</p>
+      <div class="brand-badge">
+        <img src="data:image/jpeg;base64,__KSHAMIYA_BADGE_B64__" alt="Kshamiya logo">
+        <div class="brand-badge-text"><div class="bb-name">Kshamiya</div><div class="bb-tag">Capability as an Essence</div></div>
+      </div>
       <div class="quote-block">"Technology is the Universal Equalizer."</div>
-      <p>My work spans <strong>React 19 frontend engineering</strong>, <strong>Spring Boot backend systems</strong>, <strong>cloud & Kubernetes infrastructure</strong>, and <strong>AI/NLP applications</strong> — all channeled into 19 real-world projects, a live SkillVerse product, and a growing library of beginner-friendly tech tutorials on YouTube.</p>
+      <p>My work spans <strong>React 19 frontend engineering</strong>, <strong>Spring Boot backend systems</strong>, <strong>cloud & Kubernetes infrastructure</strong>, and <strong>AI/NLP applications</strong> — all channeled into 19 real-world projects, a live Kshamiya product, and a growing library of beginner-friendly tech tutorials on YouTube.</p>
     </div>
     <div class="stat-grid reveal">
       <div class="stat-card"><div class="stat-num" data-target="19">0</div><div class="stat-label">Projects Built</div></div>
@@ -366,7 +381,7 @@
       <div class="advocacy-content">
         <h3>Technology Doesn't Ask About Your Body. Neither Should Opportunity.</h3>
         <p>I'm certified with a <strong>75% Locomotor Disability (Cerebral Palsy)</strong>. Rather than a limitation, I treat it as the central proof point of everything I build: that logical thinking, software architecture, and system design transcend physical boundaries.</p>
-        <p>This conviction isn't just personal — it's the founding principle of <strong>Skillverse Technologies</strong>, built on the motto "Skill over Degree" to make computer science education affordable, accessible, and inclusive for underserved and differently-abled learners across India.</p>
+        <p>This conviction isn't just personal — it's the founding principle of <strong>Kshamiya Technologies</strong>, built on the motto "Capability as an Essence" to make computer science education affordable, accessible, and inclusive for underserved and differently-abled learners across India.</p>
         <div class="advocacy-pills">
           <span class="advocacy-pill">EnAble India Graduate</span>
           <span class="advocacy-pill">AIISH Technology Specialist</span>
@@ -379,7 +394,7 @@
       <div class="adv-mini"><span class="adv-ic">🎓</span><h5>EnAble India</h5><p>Career Awareness Workshop — workplace readiness, ethics & professional communication</p></div>
       <div class="adv-mini"><span class="adv-ic">🦻</span><h5>AIISH Mysore</h5><p>Presented assistive technology innovations to specialists & educators, Feb 2025</p></div>
       <div class="adv-mini"><span class="adv-ic">⚡</span><h5>Assistive Tech Hackathon</h5><p>Participated in accessibility-focused innovation initiatives at AIISH, 2025</p></div>
-      <div class="adv-mini"><span class="adv-ic">🌍</span><h5>Skillverse Mission</h5><p>Founded to deliver inclusive EdTech for differently-abled & underserved learners</p></div>
+      <div class="adv-mini"><span class="adv-ic">🌍</span><h5>Kshamiya Mission</h5><p>Founded to deliver inclusive EdTech for differently-abled & underserved learners</p></div>
     </div>
   </div>
 </section>
@@ -392,9 +407,9 @@
   <div class="timeline">
     <div class="tl-item reveal">
       <div class="tl-role">Founder & CEO</div>
-      <div class="tl-org">Skillverse Technologies</div>
+      <div class="tl-org">Kshamiya Technologies</div>
       <div class="tl-date">Nov 2025 – Present · Remote-First · Mysuru</div>
-      <div class="tl-desc">Leading strategy, ecosystem architecture, and technical planning for an inclusive EdTech learning platform built on the motto "Skill over Degree," with a 10-year growth roadmap (2026–2036). Shipped the live SkillVerse web app (launched Jul 2026) and direct the "Skillvengers" team across four operational phases — vision, coordination, execution, and mentorship — while overseeing the in-house Smart Resume & LinkedIn AI Optimizer built on React and the Anthropic API.</div>
+      <div class="tl-desc">Leading strategy, ecosystem architecture, and technical planning for an inclusive EdTech learning platform built on the motto "Capability as an Essence," with a 10-year growth roadmap (2026–2036). Shipped the live Kshamiya web app (launched Jul 2026) and direct the founding team across four operational phases — vision, coordination, execution, and mentorship — while overseeing the in-house Smart Resume & LinkedIn AI Optimizer built on React and the Anthropic API.</div>
     </div>
     <div class="tl-item reveal">
       <div class="tl-role">Technical Content Creator & Educator</div>
@@ -549,7 +564,7 @@
       <span class="ic">▶️</span><div class="label">YouTube</div><div class="val">@technologies25</div>
     </a>
     <a class="contact-card" href="https://skillversetechnologies.talentlms.com" target="_blank">
-      <span class="ic">🎓</span><div class="label">Learning Portal</div><div class="val">Skillverse Technologies</div>
+      <span class="ic">🎓</span><div class="label">Learning Portal</div><div class="val">Kshamiya Technologies</div>
     </a>
   </div>
 </section>
@@ -700,7 +715,7 @@ drawParticles();
 
 // ---------- Projects data ----------
 const projects=[
-  {name:"SkillVerse Web App (Demo)",desc:"Official live web application for the SkillVerse Technologies EdTech ecosystem, launched July 2026.",stack:["React","Vercel","Tailwind"],cat:"frontend",demo:"https://skillverse-tau.vercel.app/"},
+  {name:"Kshamiya Web App (Demo)",desc:"Official live web application for the Kshamiya Technologies EdTech ecosystem, launched July 2026.",stack:["React","Vercel","Tailwind"],cat:"frontend",demo:"https://kshamiya.vercel.app/"},
   {name:"Smart Resume & LinkedIn AI",desc:"In-progress 10-phase AI tool for ATS scoring, resume analysis, and LinkedIn profile optimization.",stack:["React","Anthropic API","Axios"],cat:"ai"},
   {name:"Holy Quran Mushaf App",desc:"Offline-first PWA with verse-level audio synchronization, recording, and local persistence.",stack:["HTML5","Service Workers","PWA"],cat:"pwa",github:"https://github.com/faheem1309/Quran.git",demo:"https://quran-lime-omega.vercel.app/"},
   {name:"Stream Nest",desc:"React 19 video discovery platform with persistent playback, global state, and debounced search caching.",stack:["React 19","Context API","Router 6"],cat:"frontend",github:"https://github.com/faheem1309/streamnest.git",demo:"https://streamnest-omega.vercel.app/"},
