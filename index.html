@@ -191,106 +191,151 @@
   .advocacy-content strong{color:var(--sky);}
   .advocacy-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
   .advocacy-pill{
-    background:rgba(77,168,218,0.12);border:1px solid rgba(77,168,218,0.35);color:var(--text-main);
-    font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:20px;transition:.25s;
+    background:rgba(77,168,218,0.12);border:1px solid rgba(77,168,218,0.25);
+    padding:7px 13px;border-radius:20px;font-size:0.75rem;color:var(--text-soft);
   }
-  .advocacy-pill:hover{background:var(--sky);color:var(--navy);transform:translateY(-3px);}
 
-  .advocacy-timeline{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
-  .adv-mini{background:rgba(255,255,255,0.04);border:1px solid rgba(77,168,218,0.2);border-radius:14px;padding:20px;text-align:center;transition:.3s;}
-  .adv-mini:hover{transform:translateY(-5px);border-color:var(--sky);}
-  .adv-mini .adv-ic{font-size:1.7rem;margin-bottom:8px;display:block;}
-  .adv-mini h5{color:var(--text-main);font-size:0.95rem;margin-bottom:6px;}
-  .adv-mini p{color:var(--text-soft);font-size:0.8rem;line-height:1.5;}
-
-  /* TIMELINE (experience) */
-  #experience{background:#101d33;}
-  .timeline{position:relative;margin-top:20px;padding-left:30px;border-left:2px solid rgba(77,168,218,0.3);}
-  .tl-item{position:relative;margin-bottom:46px;padding-left:24px;}
-  .tl-item::before{
-    content:'';position:absolute;left:-39px;top:4px;width:16px;height:16px;border-radius:50%;
-    background:var(--navy);border:3px solid var(--sky);transition:.3s;
+  /* EXPERIENCE */
+  #experience{background:#0d192d;}
+  .timeline{position:relative;margin-top:10px;}
+  .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:rgba(77,168,218,0.2);}
+  .timeline-item{position:relative;padding-left:65px;margin-bottom:46px;}
+  .timeline-dot{
+    position:absolute;left:11px;top:4px;width:20px;height:20px;border-radius:50%;
+    background:var(--navy);border:3px solid var(--sky);box-shadow:0 0 0 5px rgba(77,168,218,0.08);
   }
-  .tl-item:hover::before{background:var(--sky);box-shadow:0 0 14px rgba(77,168,218,0.8);}
-  .tl-role{font-size:1.15rem;font-weight:700;color:var(--text-main);}
-  .tl-org{color:var(--sky);font-weight:600;font-size:0.95rem;margin-top:2px;}
-  .tl-date{color:var(--text-soft);font-size:0.82rem;margin-top:2px;margin-bottom:10px;opacity:0.85;}
-  .tl-desc{color:var(--text-soft);font-size:0.95rem;line-height:1.7;}
+  .timeline-item h3{font-size:1.15rem;color:var(--text-main);margin-bottom:5px;}
+  .timeline-item .company{color:var(--sky);font-weight:700;font-size:0.9rem;}
+  .timeline-item .date{color:var(--text-soft);font-size:0.78rem;margin:5px 0 12px;}
+  .timeline-item p{color:var(--text-soft);line-height:1.7;font-size:0.95rem;max-width:850px;}
 
   /* SKILLS */
-  #skills{background:linear-gradient(180deg,#101d33,var(--navy));}
-  .skill-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+  #skills{background:#101d33;}
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media(max-width:850px){.skills-grid{grid-template-columns:1fr;}}
   .skill-card{
-    background:rgba(255,255,255,0.05);border:1px solid rgba(77,168,218,0.18);border-radius:14px;padding:26px;
-    transition:.3s;
+    background:rgba(255,255,255,0.035);border:1px solid rgba(77,168,218,0.18);
+    border-radius:16px;padding:26px;transition:.3s;
   }
-  .skill-card:hover{border-color:var(--sky);transform:translateY(-5px);}
-  .skill-card h4{color:var(--sky);font-size:1.02rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-  .skill-card h4 .dot{width:10px;height:10px;border-radius:50%;background:var(--sky);display:inline-block;}
+  .skill-card:hover{border-color:rgba(77,168,218,0.5);transform:translateY(-4px);}
+  .skill-card h3{font-size:1.05rem;color:var(--text-main);margin-bottom:18px;}
   .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
   .skill-tag{
-    background:rgba(77,168,218,0.12);color:var(--text-main);font-size:0.78rem;padding:6px 12px;border-radius:20px;
-    border:1px solid rgba(77,168,218,0.3);transition:.25s;
+    background:rgba(77,168,218,0.1);border:1px solid rgba(77,168,218,0.2);
+    padding:7px 11px;border-radius:7px;color:var(--text-soft);font-size:0.75rem;
   }
-  .skill-tag:hover{background:var(--sky);color:var(--navy);transform:scale(1.06);}
-
-  .chart-wrap{display:flex;justify-content:center;margin:50px 0 10px;}
-  .radial{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:30px;max-width:900px;text-align:center;}
-  .ring{position:relative;width:120px;height:120px;margin:0 auto 10px;}
-  .ring svg{transform:rotate(-90deg);}
-  .ring circle{fill:none;stroke-width:9;}
-  .ring .bg{stroke:rgba(255,255,255,0.1);}
-  .ring .fg{stroke:var(--sky);stroke-linecap:round;stroke-dasharray:339;stroke-dashoffset:339;transition:stroke-dashoffset 1.4s ease;}
-  .ring-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--text-main);font-size:1.1rem;}
-  .ring-name{font-size:0.85rem;color:var(--text-soft);margin-top:4px;}
+  .radial-wrap{display:flex;justify-content:center;align-items:center;padding:10px;}
+  #radialChart{width:280px;height:280px;position:relative;}
+  .ring{position:absolute;inset:0;transform:rotate(-90deg);}
+  .ring circle{fill:none;stroke-width:11;}
+  .ring .bg{stroke:rgba(255,255,255,0.07);}
+  .ring .fg{stroke:var(--sky);stroke-linecap:round;stroke-dasharray:339.3;stroke-dashoffset:339.3;transition:stroke-dashoffset 1.5s ease;}
+  .ring:nth-child(2) .fg{stroke:var(--gold);}
+  .ring:nth-child(3) .fg{stroke:#7dd3a7;}
+  .ring-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;}
+  .ring-label .r-main{font-size:1.4rem;font-weight:800;color:var(--text-main);}
+  .ring-label .r-sub{font-size:0.68rem;color:var(--text-soft);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+  .skill-legend{display:flex;justify-content:center;gap:22px;margin-top:18px;flex-wrap:wrap;}
+  .legend-item{font-size:0.72rem;color:var(--text-soft);display:flex;align-items:center;gap:6px;}
+  .legend-dot{width:8px;height:8px;border-radius:50%;background:var(--sky);}
+  .legend-dot.gold{background:var(--gold);}
+  .legend-dot.green{background:#7dd3a7;}
 
   /* PROJECTS */
-  #projects{background:var(--navy);}
-  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+  #projects{background:#0d192d;}
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
   .filter-btn{
-    background:transparent;border:1px solid rgba(77,168,218,0.35);color:var(--text-soft);padding:8px 18px;
-    border-radius:20px;font-size:0.82rem;cursor:pointer;transition:.25s;font-weight:600;
+    background:transparent;border:1px solid rgba(77,168,218,0.25);color:var(--text-soft);
+    padding:8px 16px;border-radius:20px;font-size:0.78rem;cursor:pointer;transition:.3s;
   }
-  .filter-btn.active,.filter-btn:hover{background:var(--sky);color:var(--navy);border-color:var(--sky);}
-  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px;}
+  .filter-btn:hover,.filter-btn.active{background:var(--sky);color:var(--navy);border-color:var(--sky);}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:1000px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:620px){.proj-grid{grid-template-columns:1fr;}}
   .proj-card{
-    background:rgba(255,255,255,0.05);border:1px solid rgba(77,168,218,0.18);border-radius:16px;
-    padding:0;overflow:hidden;transition:.4s;cursor:default;display:flex;flex-direction:column;
+    background:rgba(255,255,255,0.035);border:1px solid rgba(77,168,218,0.16);
+    border-radius:14px;overflow:hidden;transition:.35s;position:relative;
   }
-  .proj-card:hover{transform:translateY(-8px);border-color:var(--sky);box-shadow:0 18px 40px rgba(0,0,0,0.4);}
-  .proj-top{height:6px;background:linear-gradient(90deg,var(--sky),#8fd4ff);}
-  .proj-body{padding:24px;flex:1;display:flex;flex-direction:column;}
-  .proj-body h4{color:var(--text-main);font-size:1.08rem;margin-bottom:10px;}
-  .proj-body p{color:var(--text-soft);font-size:0.88rem;line-height:1.6;flex:1;margin-bottom:16px;}
+  .proj-card:hover{transform:translateY(-7px);border-color:rgba(77,168,218,0.55);box-shadow:0 18px 40px rgba(0,0,0,0.2);}
+  .proj-top{height:4px;background:linear-gradient(90deg,var(--sky),var(--gold));}
+  .proj-body{padding:22px;}
+  .proj-body h4{font-size:1.05rem;color:var(--text-main);margin-bottom:9px;}
+  .proj-body p{font-size:0.82rem;color:var(--text-soft);line-height:1.65;margin-bottom:16px;}
   .proj-stack{display:flex;flex-wrap:wrap;gap:6px;}
-  .proj-stack span{background:rgba(77,168,218,0.15);color:var(--sky);font-size:0.72rem;padding:4px 10px;border-radius:14px;font-weight:600;}
-  .proj-links{display:flex;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(77,168,218,0.15);}
-  .proj-link{color:var(--text-soft);font-size:0.8rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:5px;transition:.25s;}
-  .proj-link:hover{color:var(--sky);transform:translateX(2px);}
+  .proj-stack span{
+    font-size:0.65rem;padding:4px 8px;border-radius:5px;background:rgba(77,168,218,0.1);
+    color:var(--sky);border:1px solid rgba(77,168,218,0.15);
+  }
+  .proj-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+  .proj-link{
+    font-size:0.7rem;color:var(--text-soft);text-decoration:none;border:1px solid rgba(255,255,255,0.15);
+    padding:6px 9px;border-radius:6px;transition:.25s;
+  }
+  .proj-link:hover{border-color:var(--sky);color:var(--sky);}
 
-  /* CERTS */
-  #certs{background:linear-gradient(180deg,var(--navy),#101d33);}
-  .cert-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-  .cert-card{background:rgba(255,255,255,0.05);border:1px solid rgba(77,168,218,0.18);border-radius:12px;padding:22px;transition:.3s;}
-  .cert-card:hover{border-color:var(--sky);transform:translateY(-4px);}
-  .cert-card h5{color:var(--sky);font-size:0.95rem;margin-bottom:10px;}
-  .cert-card ul{list-style:none;color:var(--text-soft);font-size:0.85rem;line-height:1.9;}
-  .cert-card ul li::before{content:'▸ ';color:var(--sky);}
+  /* CERTIFICATIONS */
+  #certifications{background:#101d33;}
+  .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  @media(max-width:1000px){.cert-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:550px){.cert-grid{grid-template-columns:1fr;}}
+  .cert-card{
+    padding:22px 18px;border:1px solid rgba(77,168,218,0.16);border-radius:12px;
+    background:rgba(255,255,255,0.03);transition:.3s;
+  }
+  .cert-card:hover{transform:translateY(-5px);border-color:var(--sky);}
+  .cert-icon{font-size:1.5rem;margin-bottom:10px;}
+  .cert-card h4{font-size:0.9rem;color:var(--text-main);margin-bottom:7px;line-height:1.35;}
+  .cert-card p{font-size:0.7rem;color:var(--text-soft);line-height:1.5;}
 
   /* CONTACT */
-  #contact{background:#101d33;text-align:center;}
-  .contact-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:36px;}
-  .contact-card{
-    background:rgba(255,255,255,0.05);border:1px solid rgba(77,168,218,0.25);border-radius:14px;
-    padding:24px 30px;min-width:220px;transition:.3s;text-decoration:none;color:var(--text-main);
+  #contact{background:#0d192d;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  @media(max-width:800px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-intro p{color:var(--text-soft);line-height:1.8;margin-bottom:22px;}
+  .contact-items{display:flex;flex-direction:column;gap:14px;}
+  .contact-item{
+    display:flex;align-items:center;gap:14px;color:var(--text-soft);text-decoration:none;
+    padding:14px 16px;border:1px solid rgba(77,168,218,0.15);border-radius:10px;transition:.3s;
   }
-  .contact-card:hover{background:var(--sky);color:var(--navy);transform:translateY(-6px);border-color:var(--sky);}
-  .contact-card .ic{font-size:1.6rem;margin-bottom:10px;display:block;}
-  .contact-card .label{font-size:0.78rem;opacity:0.8;}
-  .contact-card .val{font-weight:700;font-size:0.92rem;margin-top:2px;word-break:break-word;}
+  .contact-item:hover{border-color:var(--sky);color:var(--sky);transform:translateX(5px);}
+  .contact-icon{
+    width:38px;height:38px;border-radius:8px;background:rgba(77,168,218,0.1);
+    display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
+  }
+  .contact-label{font-size:0.68rem;color:var(--text-soft);opacity:.7;text-transform:uppercase;letter-spacing:1px;}
+  .contact-value{font-size:0.88rem;margin-top:2px;}
+  .contact-form{
+    background:rgba(255,255,255,0.03);border:1px solid rgba(77,168,218,0.16);
+    border-radius:16px;padding:28px;
+  }
+  .form-group{margin-bottom:17px;}
+  .form-group label{display:block;font-size:0.72rem;color:var(--text-soft);margin-bottom:7px;}
+  .form-group input,.form-group textarea{
+    width:100%;background:rgba(0,0,0,0.15);border:1px solid rgba(255,255,255,0.12);
+    border-radius:7px;padding:11px 13px;color:var(--text-main);font-family:inherit;font-size:0.85rem;outline:none;transition:.3s;
+  }
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--sky);}
+  .form-group textarea{resize:vertical;min-height:110px;}
+  .form-submit{
+    width:100%;background:var(--sky);color:var(--navy);border:none;border-radius:7px;
+    padding:12px;font-weight:800;cursor:pointer;transition:.3s;
+  }
+  .form-submit:hover{background:#6fc0ee;transform:translateY(-2px);}
 
-  footer{text-align:center;padding:30px;color:var(--text-soft);font-size:0.8rem;background:var(--navy);border-top:1px solid rgba(77,168,218,0.15);opacity:0.85;}
-  footer a{color:var(--sky);text-decoration:none;}
+  footer{
+    text-align:center;padding:35px 6%;background:#0a1527;border-top:1px solid rgba(77,168,218,0.1);
+    color:var(--text-soft);font-size:0.75rem;
+  }
+  footer strong{color:var(--sky);}
+  .footer-links{display:flex;justify-content:center;gap:20px;margin-top:12px;}
+  .footer-links a{color:var(--text-soft);text-decoration:none;transition:.3s;}
+  .footer-links a:hover{color:var(--sky);}
+
+  @media(max-width:600px){
+    section{padding:90px 5% 70px;}
+    .advocacy-banner{padding:35px 22px;}
+    .contact-form{padding:22px;}
+  }
 </style>
 </head>
 <body>
@@ -298,15 +343,18 @@
 <div id="progress"></div>
 
 <nav>
-  <div class="logo" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">FAHEEM AHMED</div>
-  <button id="navToggle" onclick="document.getElementById('navList').classList.toggle('open')">☰</button>
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <img src="./fnloff log.jpg" alt="Kshamiya Technologies venture logo">
+    <span>KSHAMIYA TECHNOLOGIES</span>
+  </div>
+  <button id="navToggle" aria-label="Toggle navigation">☰</button>
   <ul id="navList">
     <li><a href="#about">About</a></li>
     <li><a href="#advocacy">Advocacy</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -314,368 +362,569 @@
 <section id="hero">
   <canvas id="heroCanvas"></canvas>
   <div class="hero-grid">
-    <div class="hero-inner">
+    <div>
       <div class="tag">Full-Stack Engineer · Cloud & AI Architect · Digital Educator</div>
-      <h1 class="title">Hi, I'm Faheem Ahmed.<br>I build <span>accessible technology</span><br>that empowers people.</h1>
-      <p class="subtitle">Founder & CEO of Kshamiya Technologies — an inclusive EdTech ecosystem built on "Capability as an Essence." I design and ship full-stack web applications, AI-powered tools, and digital learning experiences, driven by the belief that technology is the universal equalizer. Pursuing B.E. (ISE) at JSSSTU (SJCE), Mysuru.</p>
+      <h1 class="title">Hi, I'm <span>Faheem Ahmed</span>.</h1>
+      <p class="subtitle">
+        Founder & CEO of Kshamiya Technologies, Full-Stack Engineer, Cloud & AI Architect,
+        and Digital Educator building practical technology solutions and inclusive digital experiences.
+      </p>
       <div class="cta-row">
-        <a href="#projects" class="btn btn-primary">View My Work →</a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <a class="btn btn-primary" href="#projects">View My Work</a>
+        <a class="btn btn-outline" href="#contact">Let's Connect</a>
       </div>
-      <div class="resume-links" id="resumeLinks"></div>
+      <div class="resume-links">
+        <a class="btn btn-resume" href="#" onclick="alert('Resume link can be added here.');return false;">View Resume</a>
+      </div>
     </div>
+
     <div class="photo-wrap">
       <div class="photo-ring">
-        <div class="photo-inner" id="photoSlot">
-          <img id="profilePhoto" src="" alt="Faheem Ahmed" style="display:none;">
-          <span id="photoFallback" style="color:#8aa0bd;font-size:0.85rem;text-align:center;padding:20px;">Add your photo URL in the script (PROFILE_PHOTO_URL)</span>
+        <div class="photo-inner">
+          <img src="https://raw.githubusercontent.com/faheem1309/Assests/main/fam.jpg" alt="Faheem Ahmed">
         </div>
-        <div class="photo-badge">Mysuru, India</div>
+        <div class="photo-badge">Founder · Engineer · Educator</div>
       </div>
     </div>
   </div>
+
   <div class="scroll-cue">
-    <span>SCROLL</span>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+    <span>SCROLL TO EXPLORE</span>
+    <span>↓</span>
   </div>
 </section>
 
 <section id="about">
   <div class="sec-head reveal">
-    <div class="sec-tag">Who I Am</div>
-    <div class="sec-title">About Me</div>
+    <div class="sec-tag">01 · About Me</div>
+    <h2 class="sec-title">Engineering with purpose.</h2>
   </div>
+
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I graduated with my <strong>Diploma in Computer Science & Engineering</strong> from JSS Polytechnic for the Differently Abled, Mysuru (June 2026, 9.0 CGPA), cleared <strong>DCET 2026</strong> (Karnataka Rank 1690, 90%), and have been admitted via <strong>Lateral Entry into B.E. in Information Science & Engineering</strong> at JSSSTU (SJCE), Mysuru. Alongside my studies, I'm the <strong>Founder & CEO of Kshamiya Technologies</strong> — an EdTech platform built to make education affordable, accessible, and inclusive, especially for underserved and differently-abled learners.</p>
-      <div class="brand-badge">
-        <img src="data:image/jpeg;base64,__KSHAMIYA_BADGE_B64__" alt="Kshamiya logo">
-        <div class="brand-badge-text"><div class="bb-name">Kshamiya</div><div class="bb-tag">Capability as an Essence</div></div>
+      <p>
+        I'm <strong>Faheem Ahmed</strong>, a Full-Stack Engineer, Cloud & AI Architect,
+        Digital Educator, and Founder & CEO of <strong>Kshamiya Technologies</strong>.
+        I build technology products with a focus on usability, accessibility, education,
+        automation, and real-world impact.
+      </p>
+
+      <p>
+        I completed my <strong>Diploma in Computer Science & Engineering</strong> from
+        JSS Polytechnic for the Differently Abled in June 2026 with a <strong>9.0 CGPA</strong>.
+        Through DCET 2026, I secured a Karnataka Rank of <strong>1690</strong> and entered
+        the B.E. Information Science & Engineering program at JSS Science and Technology University.
+      </p>
+
+      <div class="quote-block">
+        "Technology should not just solve problems — it should make opportunities more accessible."
       </div>
-      <div class="quote-block">"Technology is the Universal Equalizer."</div>
-      <p>My work spans <strong>React 19 frontend engineering</strong>, <strong>Spring Boot backend systems</strong>, <strong>cloud & Kubernetes infrastructure</strong>, and <strong>AI/NLP applications</strong> — all channeled into 19 real-world projects, a live Kshamiya product, and a growing library of beginner-friendly tech tutorials on YouTube.</p>
+
+      <div class="brand-badge">
+        <img src="./fnloff log.jpg" alt="Kshamiya Technologies venture logo">
+        <div class="brand-badge-text">
+          <div class="bb-name">Kshamiya Technologies</div>
+          <div class="bb-tag">EdTech · Software · Digital Innovation</div>
+        </div>
+      </div>
     </div>
+
     <div class="stat-grid reveal">
-      <div class="stat-card"><div class="stat-num" data-target="19">0</div><div class="stat-label">Projects Built</div></div>
-      <div class="stat-card"><div class="stat-num" data-target="32">0</div><div class="stat-label">Certifications</div></div>
-      <div class="stat-card"><div class="stat-num" data-target="4">0</div><div class="stat-label">Professional Roles</div></div>
-      <div class="stat-card"><div class="stat-num" data-target="640">0</div><div class="stat-label">Internship Hours</div></div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="19">0</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="32">0</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="4">0</div>
+        <div class="stat-label">Professional Roles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" data-target="640">0</div>
+        <div class="stat-label">Internship Hours</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="advocacy">
   <div class="sec-head reveal">
-    <div class="sec-tag">My Story</div>
-    <div class="sec-title">Disability Advocacy & Inclusion</div>
+    <div class="sec-tag">02 · Advocacy</div>
+    <h2 class="sec-title">Technology should include everyone.</h2>
   </div>
+
   <div class="advocacy-banner reveal">
     <div class="advocacy-grid">
       <div class="advocacy-stat-ring">
         <div class="big-ring" data-pct="75">
-          <svg width="200" height="200"><circle class="bg" cx="100" cy="100" r="90"/><circle class="fg" cx="100" cy="100" r="90"/></svg>
-          <div class="big-ring-label"><div class="pct">75%</div><div class="pct-sub">Locomotor Disability</div></div>
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            <circle class="bg" cx="100" cy="100" r="90"></circle>
+            <circle class="fg" cx="100" cy="100" r="90"></circle>
+          </svg>
+          <div class="big-ring-label">
+            <div class="pct">75%</div>
+            <div class="pct-sub">Locomotor Disability</div>
+          </div>
         </div>
-        <div class="advocacy-caption">Certified with Cerebral Palsy — lived proof that engineering excellence has no physical prerequisite.</div>
+        <div class="advocacy-caption">Living with Cerebral Palsy while building technology and creating opportunities.</div>
       </div>
+
       <div class="advocacy-content">
-        <h3>Technology Doesn't Ask About Your Body. Neither Should Opportunity.</h3>
-        <p>I'm certified with a <strong>75% Locomotor Disability (Cerebral Palsy)</strong>. Rather than a limitation, I treat it as the central proof point of everything I build: that logical thinking, software architecture, and system design transcend physical boundaries.</p>
-        <p>This conviction isn't just personal — it's the founding principle of <strong>Kshamiya Technologies</strong>, built on the motto "Capability as an Essence" to make computer science education affordable, accessible, and inclusive for underserved and differently-abled learners across India.</p>
+        <h3>Building beyond barriers.</h3>
+        <p>
+          My journey combines technology, education, entrepreneurship, and disability advocacy.
+          Living with <strong>75% locomotor disability (Cerebral Palsy)</strong> has shaped my
+          approach to problem-solving and strengthened my commitment to accessible digital experiences.
+        </p>
+        <p>
+          I believe disability should never be treated as a limitation on ambition. Through
+          technology and education, I aim to demonstrate what becomes possible when people are
+          given the right tools, access, and opportunities.
+        </p>
         <div class="advocacy-pills">
-          <span class="advocacy-pill">EnAble India Graduate</span>
-          <span class="advocacy-pill">AIISH Technology Specialist</span>
-          <span class="advocacy-pill">Assistive Tech Hackathon</span>
-          <span class="advocacy-pill">Accessibility-First Engineering</span>
+          <span class="advocacy-pill">♿ Disability Advocacy</span>
+          <span class="advocacy-pill">🌐 Digital Inclusion</span>
+          <span class="advocacy-pill">🎓 Accessible Education</span>
+          <span class="advocacy-pill">💡 Inclusive Technology</span>
         </div>
       </div>
-    </div>
-    <div class="advocacy-timeline">
-      <div class="adv-mini"><span class="adv-ic">🎓</span><h5>EnAble India</h5><p>Career Awareness Workshop — workplace readiness, ethics & professional communication</p></div>
-      <div class="adv-mini"><span class="adv-ic">🦻</span><h5>AIISH Mysore</h5><p>Presented assistive technology innovations to specialists & educators, Feb 2025</p></div>
-      <div class="adv-mini"><span class="adv-ic">⚡</span><h5>Assistive Tech Hackathon</h5><p>Participated in accessibility-focused innovation initiatives at AIISH, 2025</p></div>
-      <div class="adv-mini"><span class="adv-ic">🌍</span><h5>Kshamiya Mission</h5><p>Founded to deliver inclusive EdTech for differently-abled & underserved learners</p></div>
     </div>
   </div>
 </section>
 
 <section id="experience">
   <div class="sec-head reveal">
-    <div class="sec-tag">Career Journey</div>
-    <div class="sec-title">Experience</div>
+    <div class="sec-tag">03 · Experience</div>
+    <h2 class="sec-title">Building, teaching, measuring.</h2>
   </div>
+
   <div class="timeline">
-    <div class="tl-item reveal">
-      <div class="tl-role">Founder & CEO</div>
-      <div class="tl-org">Kshamiya Technologies</div>
-      <div class="tl-date">Nov 2025 – Present · Remote-First · Mysuru</div>
-      <div class="tl-desc">Leading strategy, ecosystem architecture, and technical planning for an inclusive EdTech learning platform built on the motto "Capability as an Essence," with a 10-year growth roadmap (2026–2036). Shipped the live Kshamiya web app (launched Jul 2026) and direct the founding team across four operational phases — vision, coordination, execution, and mentorship — while overseeing the in-house Smart Resume & LinkedIn AI Optimizer built on React and the Anthropic API.</div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <h3>Founder & CEO</h3>
+      <div class="company">Kshamiya Technologies</div>
+      <div class="date">2026 — Present</div>
+      <p>
+        Leading an EdTech and digital innovation venture focused on software products,
+        technology education, practical learning resources, and accessible digital solutions.
+      </p>
     </div>
-    <div class="tl-item reveal">
-      <div class="tl-role">Technical Content Creator & Educator</div>
-      <div class="tl-org">YouTube — @technologies25 & Tech Classes with Faheem</div>
-      <div class="tl-date">Jun 2025 – Present · Mysuru, Karnataka</div>
-      <div class="tl-desc">Designing structured lesson plans on computer basics, web development, and digital literacy for beginners. Scripting, recording, and producing video content applying instructional design principles — pacing, scaffolding, and concept chunking.</div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <h3>Technical Content Creator & Educator</h3>
+      <div class="company">Independent / Digital Education</div>
+      <div class="date">2025 — Present</div>
+      <p>
+        Creating technical learning resources, programming explanations, educational content,
+        presentations, and practical technology-based learning experiences.
+      </p>
     </div>
-    <div class="tl-item reveal">
-      <div class="tl-role">Program Monitoring & Evaluation / Data Management Intern</div>
-      <div class="tl-org">Magic Bus India Foundation</div>
-      <div class="tl-date">Dec 26, 2025 – Apr 18, 2026 · Bengaluru (Remote) · 640 Hours</div>
-      <div class="tl-desc">Managed and validated large-scale batch-wise trainee records using advanced Excel & Google Sheets data validation. Cleansed datasets, eliminated duplicates, and built standardized weekly performance dashboards for executive reporting.</div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <h3>Program Monitoring & Evaluation / Data Management Intern</h3>
+      <div class="company">Magic Bus</div>
+      <div class="date">Internship</div>
+      <p>
+        Worked with program monitoring, evaluation, data management, reporting, and
+        technology-supported operational workflows.
+      </p>
     </div>
-    <div class="tl-item reveal">
-      <div class="tl-role">Technology Specialist</div>
-      <div class="tl-org">All India Institute of Speech and Hearing (AIISH), Mysore</div>
-      <div class="tl-date">Feb 2025 · On-Site</div>
-      <div class="tl-desc">Presented and demonstrated assistive technology innovations to a diverse audience of specialists, educators, and students — highlighting the role of accessible computing in inclusive education.</div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <h3>Technology Specialist</h3>
+      <div class="company">AIISH Mysore</div>
+      <div class="date">Professional Role</div>
+      <p>
+        Worked in technology-focused responsibilities supporting digital systems,
+        technical workflows, and institutional requirements.
+      </p>
     </div>
   </div>
 </section>
 
 <section id="skills">
   <div class="sec-head reveal">
-    <div class="sec-tag">What I Work With</div>
-    <div class="sec-title">Skills & Expertise</div>
-  </div>
-  <div class="skill-cats">
-    <div class="skill-card reveal">
-      <h4><span class="dot"></span>Frontend Engineering</h4>
-      <div class="skill-tags">
-        <span class="skill-tag">React 19</span><span class="skill-tag">React Router 6</span>
-        <span class="skill-tag">Hooks</span><span class="skill-tag">Context API</span>
-        <span class="skill-tag">JavaScript ES6+</span><span class="skill-tag">HTML5/CSS3</span>
-        <span class="skill-tag">PWA</span><span class="skill-tag">Service Workers</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <h4><span class="dot"></span>Motion & Design</h4>
-      <div class="skill-tags">
-        <span class="skill-tag">GSAP ScrollTrigger</span><span class="skill-tag">SVG Animation</span>
-        <span class="skill-tag">Responsive UI/UX</span><span class="skill-tag">Accessibility-First Design</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <h4><span class="dot"></span>Backend & Data</h4>
-      <div class="skill-tags">
-        <span class="skill-tag">Java</span><span class="skill-tag">Spring Boot</span>
-        <span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span>
-        <span class="skill-tag">REST APIs</span><span class="skill-tag">Axios</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <h4><span class="dot"></span>Cloud & DevOps</h4>
-      <div class="skill-tags">
-        <span class="skill-tag">Kubernetes</span><span class="skill-tag">Linux Admin</span>
-        <span class="skill-tag">DevOps & SRE</span><span class="skill-tag">Vercel</span><span class="skill-tag">Netlify</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <h4><span class="dot"></span>AI & Automation</h4>
-      <div class="skill-tags">
-        <span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Anthropic API</span>
-        <span class="skill-tag">NLP (TextBlob)</span><span class="skill-tag">Python Scripting</span><span class="skill-tag">Workflow Automation</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <h4><span class="dot"></span>Data Analytics</h4>
-      <div class="skill-tags">
-        <span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Excel (Advanced)</span><span class="skill-tag">Google Sheets</span>
-        <span class="skill-tag">Data Validation</span>
-      </div>
-    </div>
+    <div class="sec-tag">04 · Skills</div>
+    <h2 class="sec-title">My technology stack.</h2>
   </div>
 
-  <div class="chart-wrap reveal">
-    <div class="radial" id="radialChart">
-      <div><div class="ring" data-pct="92"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" cx="60" cy="60" r="54"/></svg><div class="ring-label">92%</div></div><div class="ring-name">Frontend / React</div></div>
-      <div><div class="ring" data-pct="78"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" cx="60" cy="60" r="54"/></svg><div class="ring-label">78%</div></div><div class="ring-name">Backend / Java</div></div>
-      <div><div class="ring" data-pct="70"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" cx="60" cy="60" r="54"/></svg><div class="ring-label">70%</div></div><div class="ring-name">Cloud / DevOps</div></div>
-      <div><div class="ring" data-pct="80"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" cx="60" cy="60" r="54"/></svg><div class="ring-label">80%</div></div><div class="ring-name">AI / Automation</div></div>
-      <div><div class="ring" data-pct="88"><svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" cx="60" cy="60" r="54"/></svg><div class="ring-label">88%</div></div><div class="ring-name">EdTech / LMS</div></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <h3>Frontend Engineering</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">React 19</span>
+        <span class="skill-tag">React Router 6</span>
+        <span class="skill-tag">JavaScript ES6+</span>
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">PWA</span>
+        <span class="skill-tag">Service Workers</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <h3>Motion & Accessibility</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">GSAP</span>
+        <span class="skill-tag">SVG</span>
+        <span class="skill-tag">Web Accessibility</span>
+        <span class="skill-tag">Responsive Design</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <h3>Backend Engineering</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Spring Boot</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Axios</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <h3>Cloud & DevOps</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">DevOps</span>
+        <span class="skill-tag">Vercel</span>
+        <span class="skill-tag">Netlify</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <h3>AI & Automation</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Prompt Engineering</span>
+        <span class="skill-tag">Anthropic API</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Automation</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <h3>Data & Analytics</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="radial-wrap">
+        <div>
+          <div id="radialChart">
+            <svg class="ring" data-pct="90" width="280" height="280" viewBox="0 0 120 120">
+              <circle class="bg" cx="60" cy="60" r="54"></circle>
+              <circle class="fg" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <svg class="ring" data-pct="82" width="280" height="280" viewBox="0 0 120 120">
+              <circle class="bg" cx="60" cy="60" r="54"></circle>
+              <circle class="fg" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <svg class="ring" data-pct="76" width="280" height="280" viewBox="0 0 120 120">
+              <circle class="bg" cx="60" cy="60" r="54"></circle>
+              <circle class="fg" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="ring-label">
+              <div class="r-main">Full Stack</div>
+              <div class="r-sub">Engineering Focus</div>
+            </div>
+          </div>
+          <div class="skill-legend">
+            <div class="legend-item"><span class="legend-dot"></span>Frontend</div>
+            <div class="legend-item"><span class="legend-dot gold"></span>Backend</div>
+            <div class="legend-item"><span class="legend-dot green"></span>Cloud & AI</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="sec-head reveal">
-    <div class="sec-tag">Selected Work</div>
-    <div class="sec-title">Technical Projects</div>
+    <div class="sec-tag">05 · Projects</div>
+    <h2 class="sec-title">Things I've built.</h2>
   </div>
-  <div class="filter-row reveal">
+
+  <div class="filter-bar reveal">
     <button class="filter-btn active" data-f="all">All</button>
     <button class="filter-btn" data-f="frontend">Frontend</button>
     <button class="filter-btn" data-f="backend">Backend</button>
-    <button class="filter-btn" data-f="ai">AI / Python</button>
+    <button class="filter-btn" data-f="ai">AI</button>
     <button class="filter-btn" data-f="pwa">PWA</button>
   </div>
+
   <div class="proj-grid" id="projGrid"></div>
 </section>
 
-<section id="certs">
+<section id="certifications">
   <div class="sec-head reveal">
-    <div class="sec-tag">Verified Credentials</div>
-    <div class="sec-title">32 Certifications</div>
+    <div class="sec-tag">06 · Certifications</div>
+    <h2 class="sec-title">Continuous learning.</h2>
   </div>
-  <div class="cert-cats">
+
+  <div class="cert-grid">
     <div class="cert-card reveal">
-      <h5>☁️ Cloud & Infrastructure</h5>
-      <ul><li>Applications of Cloud Computing</li><li>Kubernetes (LFS158)</li><li>Linux (LFS101)</li><li>Open Source Dev (LFD102)</li><li>DevOps & SRE Fundamentals (LFS162)</li></ul>
+      <div class="cert-icon">🏆</div>
+      <h4>Technical Certifications</h4>
+      <p>Programming, software development, technology, and professional learning credentials.</p>
     </div>
+
     <div class="cert-card reveal">
-      <h5>🤖 AI, Data Science & Analytics</h5>
-      <ul><li>Prompt Engineering</li><li>Big Data Analytics</li><li>Blockchain Developer Training</li><li>Power BI & Tableau</li><li>Data Fundamentals</li><li>Excel Automation</li></ul>
+      <div class="cert-icon">💻</div>
+      <h4>Software Development</h4>
+      <p>Certifications and learning experiences across modern development technologies.</p>
     </div>
+
     <div class="cert-card reveal">
-      <h5>💻 Software Engineering</h5>
-      <ul><li>Full Stack Java Development</li><li>Learning React / Webpack for React</li><li>HTML5 / CSS3 / JavaScript</li><li>Web Application Fundamentals</li><li>Responsive Layout Engineering</li></ul>
+      <div class="cert-icon">☁️</div>
+      <h4>Cloud & DevOps</h4>
+      <p>Cloud infrastructure, Linux, deployment, automation, and DevOps-focused learning.</p>
     </div>
+
     <div class="cert-card reveal">
-      <h5>🔐 Cybersecurity</h5>
-      <ul><li>Information Security Fundamentals</li><li>Cyber Security Pathway</li><li>Kali Linux Configuration</li><li>Cryptography Systems</li></ul>
-    </div>
-    <div class="cert-card reveal">
-      <h5>🧭 Leadership</h5>
-      <ul><li>Project Management 101</li><li>Time Management for Engineers</li><li>Professional Career Awareness</li><li>EnAble India Career Workshop</li></ul>
+      <div class="cert-icon">🤖</div>
+      <h4>AI & Data</h4>
+      <p>Artificial intelligence, data, automation, analytics, and emerging technology learning.</p>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="sec-head reveal">
-    <div class="sec-tag">Let's Connect</div>
-    <div class="sec-title">Get In Touch</div>
+    <div class="sec-tag">07 · Contact</div>
+    <h2 class="sec-title">Let's build something meaningful.</h2>
   </div>
-  <p class="reveal" style="color:var(--text-soft);max-width:560px;margin:0 auto 10px;">Open to full-time on-site roles in Frontend / Full-Stack Development. Let's build something impactful together.</p>
-  <div class="contact-grid reveal">
-    <a class="contact-card" href="mailto:masfmohammed027@gmail.com">
-      <span class="ic">✉️</span><div class="label">Email</div><div class="val">masfmohammed027@gmail.com</div>
-    </a>
-    <a class="contact-card" href="tel:9448340879">
-      <span class="ic">📞</span><div class="label">Phone</div><div class="val">9448340879</div>
-    </a>
-    <a class="contact-card" href="https://linkedin.com/in/faheem-ahmed-dev" target="_blank">
-      <span class="ic">💼</span><div class="label">LinkedIn</div><div class="val">faheem-ahmed-dev</div>
-    </a>
-    <a class="contact-card" href="https://github.com/faheem1309" target="_blank">
-      <span class="ic">🖥️</span><div class="label">GitHub</div><div class="val">faheem1309</div>
-    </a>
-    <a class="contact-card" href="https://youtube.com/@technologies25" target="_blank">
-      <span class="ic">▶️</span><div class="label">YouTube</div><div class="val">@technologies25</div>
-    </a>
-    <a class="contact-card" href="https://skillversetechnologies.talentlms.com" target="_blank">
-      <span class="ic">🎓</span><div class="label">Learning Portal</div><div class="val">Kshamiya Technologies</div>
-    </a>
+
+  <div class="contact-grid">
+    <div class="contact-intro reveal">
+      <p>
+        Whether you want to collaborate on a technology project, discuss education,
+        explore an idea, or simply connect, feel free to reach out.
+      </p>
+
+      <div class="contact-items">
+        <a class="contact-item" href="mailto:faheemahmed@example.com">
+          <div class="contact-icon">✉</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">faheemahmed@example.com</div>
+          </div>
+        </a>
+
+        <a class="contact-item" href="https://www.linkedin.com/" target="_blank">
+          <div class="contact-icon">in</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">Connect professionally</div>
+          </div>
+        </a>
+
+        <a class="contact-item" href="https://github.com/faheem1309" target="_blank">
+          <div class="contact-icon">⌘</div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">github.com/faheem1309</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="handleContact(event)">
+      <div class="form-group">
+        <label for="name">YOUR NAME</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">MESSAGE</label>
+        <textarea id="message" name="message" placeholder="Tell me about your idea..." required></textarea>
+      </div>
+
+      <button class="form-submit" type="submit">Send Message →</button>
+    </form>
   </div>
 </section>
 
 <footer>
-  Mysuru, Karnataka, India · Built with React-grade craftsmanship by <a href="#hero">Faheem Ahmed</a> · © 2026
+  <div>© 2026 <strong>Faheem Ahmed</strong>. Built with purpose & technology.</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 </footer>
 
 <script>
-/* ====== CONFIG: paste your hosted photo & resume URLs here ====== */
-const PROFILE_PHOTO_URL = "https://raw.githubusercontent.com/faheem1309/Assests/main/fam.jpg"; // e.g. "https://yourhost.com/faheem.jpg"
-const RESUME_FILES = [
-  {label:"ATS Resume", file:"Faheem_Ahmed_ATS_Resume.pdf"},
-  {label:"Teacher Resume", file:"Faheem_Ahmed_CS_Teacher_ATS_Resume.pdf"},
-  {label:"Main Resume", file:"Faheem_Resume.pdf"},
-  {label:"Tailored Resume", file:"Tailored_REs_to_JD_Full_Stack_or_Backend.pdf"},
-];
+/* ---------- Navigation ---------- */
+const navToggle=document.getElementById('navToggle');
+const navList=document.getElementById('navList');
 
-if(PROFILE_PHOTO_URL){
-  const img=document.getElementById('profilePhoto');
-  img.src=PROFILE_PHOTO_URL;
-  img.style.display='block';
-  document.getElementById('photoFallback').style.display='none';
-}
-const resumeLinks=document.getElementById('resumeLinks');
-resumeLinks.innerHTML = RESUME_FILES.map(({label, file}) => `
-  <a href="./${file}" class="btn btn-resume" download="${file}">⬇ ${label}</a>
-`).join('');
+navToggle.addEventListener('click',()=>{
+  navList.classList.toggle('open');
+});
 
-// ---------- Scroll progress ----------
+/* ---------- Progress bar ---------- */
 window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  const scrollTop=window.scrollY;
+  const docHeight=document.documentElement.scrollHeight-window.innerHeight;
+  const pct=docHeight>0?(scrollTop/docHeight)*100:0;
   document.getElementById('progress').style.width=pct+'%';
 });
 
-// ---------- Mobile nav close on link click ----------
-document.querySelectorAll('#navList a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navList').classList.remove('open')));
+/* ---------- Contact form ---------- */
+function handleContact(event){
+  event.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const message=document.getElementById('message').value.trim();
 
-// ---------- Reveal on scroll ----------
+  if(!name||!email||!message){
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  const subject=encodeURIComponent('Portfolio Contact from '+name);
+  const body=encodeURIComponent(
+    'Name: '+name+'\n'+
+    'Email: '+email+'\n\n'+
+    message
+  );
+
+  window.location.href='mailto:faheemahmed@example.com?subject='+subject+'&body='+body;
+}
+
+/* ---------- Mobile nav close on link click ---------- */
+document.querySelectorAll('#navList a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('navList').classList.remove('open');
+  });
+});
+
+/* ---------- Reveal on scroll ---------- */
 const revealEls=document.querySelectorAll('.reveal');
+
 const io=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       e.target.classList.add('in');
+
       if(e.target.classList.contains('stat-grid')){
         animateCounters();
       }
+
       if(e.target.querySelector && e.target.querySelector('#radialChart')){
         animateRings();
       }
+
       if(e.target.classList.contains('advocacy-banner')){
         animateBigRing();
       }
     }
   });
 },{threshold:0.25});
+
 revealEls.forEach(el=>io.observe(el));
 
-// ---------- Counters ----------
+/* ---------- Counters ---------- */
 let countersDone=false;
+
 function animateCounters(){
   if(countersDone) return;
+
   countersDone=true;
+
   document.querySelectorAll('.stat-num').forEach(el=>{
     const target=+el.getAttribute('data-target');
     let cur=0;
     const step=Math.max(1,Math.ceil(target/60));
+
     const t=setInterval(()=>{
       cur+=step;
-      if(cur>=target){cur=target;clearInterval(t);}
+
+      if(cur>=target){
+        cur=target;
+        clearInterval(t);
+      }
+
       el.textContent=cur;
     },20);
   });
 }
 
-// ---------- Radial rings (skills) ----------
+/* ---------- Radial rings (skills) ---------- */
 let ringsDone=false;
+
 function animateRings(){
   if(ringsDone) return;
+
   ringsDone=true;
+
   document.querySelectorAll('#radialChart .ring').forEach(r=>{
     const pct=+r.getAttribute('data-pct');
     const circle=r.querySelector('.fg');
     const circumference=2*Math.PI*54;
-    const offset=circumference - (pct/100)*circumference;
-    setTimeout(()=>{circle.style.strokeDashoffset=offset;},100);
+    const offset=circumference-(pct/100)*circumference;
+
+    setTimeout(()=>{
+      circle.style.strokeDashoffset=offset;
+    },100);
   });
 }
 
-// ---------- Big ring (advocacy) ----------
+/* ---------- Big ring (advocacy) ---------- */
 let bigRingDone=false;
+
 function animateBigRing(){
   if(bigRingDone) return;
+
   bigRingDone=true;
+
   const ring=document.querySelector('.big-ring');
   const pct=+ring.getAttribute('data-pct');
   const circle=ring.querySelector('.fg');
   const circumference=2*Math.PI*90;
-  const offset=circumference - (pct/100)*circumference;
-  setTimeout(()=>{circle.style.strokeDashoffset=offset;},150);
+  const offset=circumference-(pct/100)*circumference;
+
+  setTimeout(()=>{
+    circle.style.strokeDashoffset=offset;
+  },150);
 }
 
-// ---------- Hero particle canvas ----------
+/* ---------- Hero particle canvas ---------- */
 const canvas=document.getElementById('heroCanvas');
 const ctx=canvas.getContext('2d');
-function resize(){canvas.width=canvas.parentElement.offsetWidth;canvas.height=canvas.parentElement.offsetHeight;}
+
+function resize(){
+  canvas.width=canvas.parentElement.offsetWidth;
+  canvas.height=canvas.parentElement.offsetHeight;
+}
+
 resize();
 window.addEventListener('resize',resize);
+
 let particles=[];
 const PCOUNT=70;
+
 for(let i=0;i<PCOUNT;i++){
   particles.push({
     x:Math.random()*canvas.width,
@@ -685,22 +934,32 @@ for(let i=0;i<PCOUNT;i++){
     vy:(Math.random()-0.5)*0.3
   });
 }
+
 function drawParticles(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
+
   ctx.fillStyle='rgba(77,168,218,0.75)';
+
   for(let p of particles){
-    p.x+=p.vx;p.y+=p.vy;
+    p.x+=p.vx;
+    p.y+=p.vy;
+
     if(p.x<0||p.x>canvas.width)p.vx*=-1;
     if(p.y<0||p.y>canvas.height)p.vy*=-1;
+
     ctx.beginPath();
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
     ctx.fill();
   }
+
   ctx.strokeStyle='rgba(77,168,218,0.14)';
+
   for(let i=0;i<particles.length;i++){
     for(let j=i+1;j<particles.length;j++){
-      const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+      const dx=particles[i].x-particles[j].x;
+      const dy=particles[i].y-particles[j].y;
       const dist=Math.sqrt(dx*dx+dy*dy);
+
       if(dist<110){
         ctx.beginPath();
         ctx.moveTo(particles[i].x,particles[i].y);
@@ -709,60 +968,215 @@ function drawParticles(){
       }
     }
   }
+
   requestAnimationFrame(drawParticles);
 }
+
 drawParticles();
 
-// ---------- Projects data ----------
+/* ---------- Projects data ---------- */
 const projects=[
-  {name:"Kshamiya Web App (Demo)",desc:"Official live web application for the Kshamiya Technologies EdTech ecosystem, launched July 2026.",stack:["React","Vercel","Tailwind"],cat:"frontend",demo:"https://kshamiya.vercel.app/"},
-  {name:"Smart Resume & LinkedIn AI",desc:"In-progress 10-phase AI tool for ATS scoring, resume analysis, and LinkedIn profile optimization.",stack:["React","Anthropic API","Axios"],cat:"ai"},
-  {name:"Holy Quran Mushaf App",desc:"Offline-first PWA with verse-level audio synchronization, recording, and local persistence.",stack:["HTML5","Service Workers","PWA"],cat:"pwa",github:"https://github.com/faheem1309/Quran.git",demo:"https://quran-lime-omega.vercel.app/"},
-  {name:"Stream Nest",desc:"React 19 video discovery platform with persistent playback, global state, and debounced search caching.",stack:["React 19","Context API","Router 6"],cat:"frontend",github:"https://github.com/faheem1309/streamnest.git",demo:"https://streamnest-omega.vercel.app/"},
-  {name:"Admin Dashboard",desc:"Business analytics dashboard with multi-criteria filtering and custom lightweight chart rendering.",stack:["React","JavaScript","CSS"],cat:"frontend",github:"https://github.com/faheem1309/admin-dashboard.git",demo:"https://admin-dashboard-black-ten-89.vercel.app/"},
-  {name:"Breezl Weather App",desc:"Real-time weather app using live REST API integration with smooth GSAP motion animations.",stack:["JavaScript","GSAP","Fetch API"],cat:"frontend",github:"https://github.com/faheem1309/weather-app.git",demo:"https://breezl.netlify.app/"},
-  {name:"Flowly",desc:"Motion-rich animated landing page using GSAP ScrollTrigger timelines and SVG asset animation.",stack:["GSAP","SVG","CSS3"],cat:"frontend",github:"https://github.com/faheem1309/Responsive-landing-page.git",demo:"https://responsive-landing-page-three-gilt.vercel.app/"},
-  {name:"Faheem's Reel Explorer",desc:"OMDb-powered media discovery platform with conditional modal previews and async API integration.",stack:["React","OMDb API"],cat:"frontend",github:"https://github.com/faheem1309/movie-search-app.git",demo:"https://faheem-reel-explorer.netlify.app/"},
-  {name:"Spring Boot CRUD Systems",desc:"Enterprise-style backend services (Hostel, Employee, Student, Bank) with layered architecture & exception handling.",stack:["Java","Spring Boot","MySQL","MongoDB"],cat:"backend"},
-  {name:"Zikra — AI Assistant",desc:"NLP-powered Python command-line assistant using TextBlob for sentiment analysis.",stack:["Python","NLP","TextBlob"],cat:"ai"},
-  {name:"Student Marks Manager",desc:"Academic tracking web app with real-time weighted grade estimation and score validation.",stack:["React","Vercel"],cat:"frontend",github:"https://github.com/faheem1309/student-marks-manager.git",demo:"https://student-marks-manager.vercel.app/"},
-  {name:"Smart Calculator V2",desc:"Dual-mode standard & scientific calculator with persistent history log.",stack:["HTML5","CSS3","JavaScript"],cat:"frontend",github:"https://github.com/faheem1309/Smart-Calculator-Web-App.git",demo:"https://smart-calculator-web-app.vercel.app/"},
-  {name:"Islamic Quiz App",desc:"Randomized educational assessment platform with instant feedback and granular scoring.",stack:["HTML5","CSS3","JS"],cat:"frontend",github:"https://github.com/faheem1309/Islamic-quiz-app.git",demo:"https://islamic-quiz-app-sand.vercel.app/"},
-  {name:"Random Quotes Generator",desc:"Animated UI with local storage and offline support.",stack:["JavaScript","CSS"],cat:"frontend",github:"https://github.com/faheem1309/Random-quotes.git",demo:"https://ran-quo-gen.vercel.app/"},
-  {name:"FoodLand",desc:"Modular React recipe platform with component-driven architecture.",stack:["React"],cat:"frontend",github:"https://github.com/faheem1309/foodland-react.git",demo:"https://foodland-chi.vercel.app/"},
-  {name:"React Counter App",desc:"State history tracking and persistence demo built on React fundamentals.",stack:["React"],cat:"frontend",github:"https://github.com/faheem1309/rcounter-app.git",demo:"https://rcounter-app.vercel.app/"},
-  {name:"Vanilla JS To-Do List",desc:"Accessibility-focused task manager built in plain JavaScript.",stack:["JavaScript","Accessibility"],cat:"frontend",github:"https://github.com/faheem1309/Todo-App-van.git",demo:"https://todo-app-van.vercel.app/"},
-  {name:"Mario-Style 2D Game",desc:"Custom physics and collision engine built from scratch.",stack:["JavaScript","Canvas"],cat:"frontend"},
-  {name:"Todo React App",desc:"React state management fundamentals project.",stack:["React"],cat:"frontend"}
+  {
+    name:"PaperForge Studio",
+    desc:"Cross-platform question paper and assessment engine prototype with offline-first local persistence, institutional header configuration, multi-tier blueprints, KaTeX formula support, live paper preview, question bank management, and automated paper generation workflows.",
+    stack:["React 19","TypeScript","Vite","KaTeX","Tailwind CSS","Google Gemini"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/PaperForge",
+    demo:"https://paperforge-studio.ai.studio/"
+  },
+  {
+    name:"Kshamiya Web App (Demo)",
+    desc:"Official live web application for the Kshamiya Technologies EdTech ecosystem, launched July 2026.",
+    stack:["React","Vercel","Tailwind"],
+    cat:"frontend",
+    demo:"https://kshamiya.vercel.app/"
+  },
+  {
+    name:"Smart Resume & LinkedIn AI",
+    desc:"In-progress 10-phase AI tool for ATS scoring, resume analysis, and LinkedIn profile optimization.",
+    stack:["React","Anthropic API","Axios"],
+    cat:"ai"
+  },
+  {
+    name:"Holy Quran Mushaf App",
+    desc:"Offline-first PWA with verse-level audio synchronization, recording, and local persistence.",
+    stack:["HTML5","Service Workers","PWA"],
+    cat:"pwa",
+    github:"https://github.com/faheem1309/Quran.git",
+    demo:"https://quran-lime-omega.vercel.app/"
+  },
+  {
+    name:"Stream Nest",
+    desc:"React 19 video discovery platform with persistent playback, global state, and debounced search caching.",
+    stack:["React 19","Context API","Router 6"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/streamnest.git",
+    demo:"https://streamnest-omega.vercel.app/"
+  },
+  {
+    name:"Admin Dashboard",
+    desc:"Business analytics dashboard with multi-criteria filtering and custom lightweight chart rendering.",
+    stack:["React","JavaScript","CSS"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/admin-dashboard.git",
+    demo:"https://admin-dashboard-black-ten-89.vercel.app/"
+  },
+  {
+    name:"Breezl Weather App",
+    desc:"Real-time weather app using live REST API integration with smooth GSAP motion animations.",
+    stack:["JavaScript","GSAP","Fetch API"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/weather-app.git",
+    demo:"https://breezl.netlify.app/"
+  },
+  {
+    name:"Flowly",
+    desc:"Motion-rich animated landing page using GSAP ScrollTrigger timelines and SVG asset animation.",
+    stack:["GSAP","SVG","CSS3"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/Responsive-landing-page.git",
+    demo:"https://responsive-landing-page-three-gilt.vercel.app/"
+  },
+  {
+    name:"Faheem's Reel Explorer",
+    desc:"OMDb-powered media discovery platform with conditional modal previews and async API integration.",
+    stack:["React","OMDb API"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/movie-search-app.git",
+    demo:"https://faheem-reel-explorer.netlify.app/"
+  },
+  {
+    name:"Spring Boot CRUD Systems",
+    desc:"Enterprise-style backend services (Hostel, Employee, Student, Bank) with layered architecture & exception handling.",
+    stack:["Java","Spring Boot","MySQL","MongoDB"],
+    cat:"backend"
+  },
+  {
+    name:"Zikra — AI Assistant",
+    desc:"NLP-powered Python command-line assistant using TextBlob for sentiment analysis.",
+    stack:["Python","NLP","TextBlob"],
+    cat:"ai"
+  },
+  {
+    name:"Student Marks Manager",
+    desc:"Academic tracking web app with real-time weighted grade estimation and score validation.",
+    stack:["React","Vercel"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/student-marks-manager.git",
+    demo:"https://student-marks-manager.vercel.app/"
+  },
+  {
+    name:"Smart Calculator V2",
+    desc:"Dual-mode standard & scientific calculator with persistent history log.",
+    stack:["HTML5","CSS3","JavaScript"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/Smart-Calculator-Web-App.git",
+    demo:"https://smart-calculator-web-app.vercel.app/"
+  },
+  {
+    name:"Islamic Quiz App",
+    desc:"Randomized educational assessment platform with instant feedback and granular scoring.",
+    stack:["HTML5","CSS3","JS"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/Islamic-quiz-app.git",
+    demo:"https://islamic-quiz-app-sand.vercel.app/"
+  },
+  {
+    name:"Random Quotes Generator",
+    desc:"Animated UI with local storage and offline support.",
+    stack:["JavaScript","CSS"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/Random-quotes.git",
+    demo:"https://ran-quo-gen.vercel.app/"
+  },
+  {
+    name:"FoodLand",
+    desc:"Modular React recipe platform with component-driven architecture.",
+    stack:["React"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/foodland-react.git",
+    demo:"https://foodland-chi.vercel.app/"
+  },
+  {
+    name:"React Counter App",
+    desc:"State history tracking and persistence demo built on React fundamentals.",
+    stack:["React"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/rcounter-app.git",
+    demo:"https://rcounter-app.vercel.app/"
+  },
+  {
+    name:"Vanilla JS To-Do List",
+    desc:"Accessibility-focused task manager built in plain JavaScript.",
+    stack:["JavaScript","Accessibility"],
+    cat:"frontend",
+    github:"https://github.com/faheem1309/Todo-App-van.git",
+    demo:"https://todo-app-van.vercel.app/"
+  },
+  {
+    name:"Mario-Style 2D Game",
+    desc:"Custom physics and collision engine built from scratch.",
+    stack:["JavaScript","Canvas"],
+    cat:"frontend"
+  },
+  {
+    name:"Todo React App",
+    desc:"React state management fundamentals project.",
+    stack:["React"],
+    cat:"frontend"
+  }
 ];
+
 const grid=document.getElementById('projGrid');
+
 function renderProjects(filter){
   grid.innerHTML='';
-  projects.filter(p=>filter==='all'||p.cat===filter).forEach((p,i)=>{
-    const card=document.createElement('div');
-    card.className='proj-card reveal';
-    const githubUrl = p.github ? p.github.replace(/\.git$/,'') : '';
-    let linksHtml = '';
-    if(githubUrl || p.demo){
-      linksHtml = '<div class="proj-links">';
-      if(githubUrl) linksHtml += `<a class="proj-link" href="${githubUrl}" target="_blank">🔗 GitHub</a>`;
-      if(p.demo) linksHtml += `<a class="proj-link" href="${p.demo}" target="_blank">↗ Live Demo</a>`;
-      linksHtml += '</div>';
-    }
-    card.innerHTML=`
-      <div class="proj-top"></div>
-      <div class="proj-body">
-        <h4>${p.name}</h4>
-        <p>${p.desc}</p>
-        <div class="proj-stack">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
-        ${linksHtml}
-      </div>`;
-    grid.appendChild(card);
-    io.observe(card);
-    setTimeout(()=>card.classList.add('in'), 30*i);
-  });
+
+  projects
+    .filter(p=>filter==='all'||p.cat===filter)
+    .forEach((p,i)=>{
+      const card=document.createElement('div');
+      card.className='proj-card reveal';
+
+      const githubUrl=p.github?p.github.replace(/\.git$/,''):'';
+
+      let linksHtml='';
+
+      if(githubUrl||p.demo){
+        linksHtml='<div class="proj-links">';
+
+        if(githubUrl){
+          linksHtml+=`<a class="proj-link" href="${githubUrl}" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>`;
+        }
+
+        if(p.demo){
+          linksHtml+=`<a class="proj-link" href="${p.demo}" target="_blank" rel="noopener noreferrer">↗ Live Demo</a>`;
+        }
+
+        linksHtml+='</div>';
+      }
+
+      card.innerHTML=`
+        <div class="proj-top"></div>
+        <div class="proj-body">
+          <h4>${p.name}</h4>
+          <p>${p.desc}</p>
+          <div class="proj-stack">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
+          ${linksHtml}
+        </div>
+      `;
+
+      grid.appendChild(card);
+      io.observe(card);
+
+      setTimeout(()=>{
+        card.classList.add('in');
+      },30*i);
+    });
 }
+
 renderProjects('all');
+
 document.querySelectorAll('.filter-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
